@@ -1,0 +1,26 @@
+[project]
+name = "ml-segmentation-pipeline"
+version = "0.1.0"
+description = "Production-style SAM segmentation service with video temporal smoothing"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn[standard]>=0.27",
+  "pydantic>=2.0",
+  "numpy>=1.24",
+  "opencv-python-headless>=4.8",
+  "pillow>=10.0",
+  "python-multipart>=0.0.9",
+  "requests>=2.31",
+  "torch>=2.1",
+  "torchvision>=0.16",
+  "segment-anything @ git+https://github.com/facebookresearch/segment-anything.git",
+]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
